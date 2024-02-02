@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Sixtyfour&display=swap');
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ box-sizing: border-box;
+ font-family: 'Poppins', sans-serif;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(0deg,#2ea8ff,#f8ff2e);
+    background-attachment: fixed;
+    z-index: 3;
+}
+
+.container {
+    align-content: center;
+    position: relative;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0 0 250px;
+    padding: 20px 0;
+}
+
+.container .card {
+    position: relative;
+    height: 250px;
+    background: -webkit-linear-gradient(45deg, #ece9e9,#cecaca);
+    display: flex;
+    width: 45%;
+    margin: 30px 0;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container .card .imgBx {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    z-index: 1;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+    transition: top 0.5s; z-index: 0.5s; transform: 0.5s;
+    transition-delay: 0.3s,0.3,0.3s;
+
+}
+.container .card .imgBx::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skew(45deg) translateX(200px);
+    transition: 0.3s;
+    z-index: 2;
+}
+.container .card .imgBx:hover::before {
+    transform: skew(45deg) translateX(-75px);
+    transition: 0.2s;
+}
+.container .card:hover .imgBx {
+    top: -20px;
+    transition-delay: 0.3s,0.3,0.3s;
+    transform: translateY(-10px);
+    z-index: 11;
+    display: flex;
+    height: 150px;
+    width: 125px;
+    left: 15px;
+}
+
+.container .card .imgBx img {
+    max-width: 100px;
+    transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .imgBx img {
+    max-width: 75px;
+}
+
+.container .card .content {
+    position: absolute; /* Changed from absolute to relative */
+    right: 0;
+    width: calc(100% - 75px);
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .card .content p {
+    margin-top: 5px; /* Added margin-top to separate h3 and p */
+    /* color: #fff; */
+}
+
+
+.container .card .content h3 {
+    font-size: 20px;
+    background: -webkit-linear-gradient(#fff,#17a4c0);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     margin-bottom: 5px;
+}
+
+.container .card .content a {
+    justify-content: center;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(#ffff00,#d649d6);
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+section {
+    padding: 0 100px 100px;
+    display: flex;
+    height: 220px;
+    justify-content: center;
+}
+
+
+/*PARALLAX LAYERS */
+#parallax {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #e1dcdc00;
+}
+
+#parallax .layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#parallax .layer.bg {
+    background: url(../PF_images/bg_flowers.jpeg);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    display: flex;
+}
+
+#parallax .layer.text {
+    background: url(../PF_images/PaperFrank.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    max-height: 450px;
+    display: flex;
+    z-index: 99;
+    margin-left: 120px;
+}
+
+#parallax .layer.portrait {
+    background: url(../PF_images/PF_portrait.png);
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    margin-right: 600px;
+    margin-top: 30px;
+    max-width: 500px;
+    transform: scaleX(-1);
+    z-index: 2;
+}
+
+#parallax .layer.bottom {
+    background: url(../PF_images/bottom.png);
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    z-index: 99;
+}
+
+article {
+    margin-top: 1rem;
+}
+
+
+ /* GRID GALLERY */
+.grid-gallery {
+    --size: 100px; /* specifies size of the cell in the grid */
+    display: grid;
+    grid-template-columns: repeat(6, var(--size)); /* defines the number and size of columns */
+    grid-auto-rows: var(--size); /* added columns will have defined cell height */
+    gap: 5px; /* distance between the photos (cells) */
+    place-content: start center;  /* alignment within the cell: vertically to the top, horizontally in center */
+    margin-bottom: var(--size); /* fixes issues with the gallery:display:
+    the photo occupy two cell spaces, the last row of images will overflow the cell and potentially overlap the content below.
+    Avoiding this, added a bottom margin equal to the size of an extra row. */
+}
+
+.grid-gallery img {
+    width: calc(var(--size) * 2); /* specifies the pictures width */
+    height: calc(var(--size) * 2); /* sets height to the same value of width */
+    object-fit: cover; /* indicates the image to occupy the whole space to avoid distortion */
+    grid-column: auto / span 2; /* indicates that the img should go in the next cell */ 
+    border-radius: 5px;
+    clip-path: path("M90 ,10 C100,0 100,0 110 ,10 190,90 190,90 190 ,90 200 ,100 200 ,100 190 ,110 190 ,110 110 ,190 110 ,190 100 ,200 100 ,200 90 ,190 90 ,190 10 ,110 10 ,110 0 ,100 0 ,100 10 ,90Z");
+
+    transition: clip-path 0.25s, filter 0.75s;
+}
+
+/* expands the image and dims the non-hovered photos and gives focus to 'active' selection */
+.grid-gallery img:hover {
+    clip-path: path("M0 ,0 C0 ,0 200 ,0 200 ,0 200 , 0 200 ,100 200 ,100 200 ,100 200 ,200 200 ,200 200 ,200 100 ,200 100 ,200 100 ,200 100 ,200 0 ,200 0 ,200 0 ,100 0 ,100 0 ,100 0 ,100 0 ,100Z");
+    transition: clip-path 0.25s, filter 0.25s;
+    z-index: 1;
+}
+
+.grid-gallery img:nth-child(5n - 1) {
+    grid-column: 2/ span 2; /* to avoid images overlapping */
+}
+
+.grid-gallery:has(img:hover) img:not(:hover) {
+    filter: brightness(0.5) contrast(0.5); /* select all non-hovered images that has at least at hovered picture */
+}
+
+.banner-flip {
+    transform: scaleY(-1) scaleX(-1); /* vertically flips image for mirror effect */
+
+}
+.glitch-text {
+    margin-top: 100px;
+    letter-spacing: -10px;
+    font-family: 'Sixtyfour', sans-serif;
+    position: relative;
+    color: #000;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+  
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+  
+  .glitch-text::before {
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+  }
+  
+  @keyframes glitch-anim {
+    0% {
+      transform: translate(2px, 2px);
+    }
+    25% {
+      transform: translate(-2px, -2px);
+    }
+    50% {
+      transform: translate(2px, 2px);
+    }
+    75% {
+      transform: translate(-2px, -2px);
+    }
+    100% {
+      transform: translate(2px, 2px);
+    }
+  }
+
+.footer {
+    margin-top: 50px;
+    text-align: right;
+}
+.autograph {
+    margin-top: 50px;
+}
+.designedby {
+    margin-top: 25px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 992px) {
+    .container {
+        position:relative;
+        width: 50%;
+        align-items: center;
+        flex-direction: column;
+    }
+    .container .card {
+        width: 300px;
+        height: auto;
+        flex-direction:column;
+        background: transparent;
+        margin: -20px 0;
+        box-shadow: none;
+    }
+    .container .card .imgBx {
+        position: relative;
+    }
+    .container .card .imgBx,
+    .container .card:hover .imgBx {
+        width: 200px;
+        height: 200px;
+        top:100px;
+        left: 18%;
+    }
+    .container .card:hover .imgBx {
+        top: 80px;
+    }
+    .container .card .imgBx img,
+    .container .card:hover .imgBx img {
+        max-width: 100px;
+    }
+    .container .card .content {
+        position: relative;
+        width: 100%;
+        background: #fff;
+        box-shadow: none;
+        border-radius: 20px;
+        padding: 20px 40px 20px;
+        border-top: 100px solid #fff;
+    }
+    .container .card .content h3 {
+        text-align: center;
+    }
+    .container .card .content p {
+        text-align: center;
+    }
+    @media screen and (max-width: 768px) {
+        section {
+            padding: 0 10px; /* Further reduce padding for smaller screens */
+        }
+    
+        #parallax .layer.text{
+            margin-left: 10px;
+            margin-right: 10px; /* Adjusted margins for smaller screens */
+        }
+    }
+}
